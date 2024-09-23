@@ -1,18 +1,14 @@
 package main
 
 import (
-    "context"
     "fmt"
     "log"
 
     libp2p "github.com/libp2p/go-libp2p"
-    "github.com/libp2p/go-libp2p/core/host"
     relayv2 "github.com/libp2p/go-libp2p/p2p/protocol/circuitv2/relay"
 )
 
 func main() {
-    ctx := context.Background()
-
     // Create a new libp2p host
     host, err := libp2p.New(
         libp2p.ListenAddrStrings(
