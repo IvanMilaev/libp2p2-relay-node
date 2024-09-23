@@ -30,7 +30,7 @@ func main() {
 	}
 
 	// Print the host's multiaddresses
-	fmt.Println("Relay node is running. Peer ID:", host.ID().Pretty())
+	fmt.Println("Relay node is running. Peer ID:", host.ID())
 	for _, addr := range host.Addrs() {
 		fmt.Printf("Listening on: %s/p2p/%s\n", addr, host.ID())
 	}
