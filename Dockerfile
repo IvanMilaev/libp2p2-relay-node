@@ -91,6 +91,11 @@ let g:gitgutter_enabled = 1\n\
 let g:airline#extensions#tabline#enabled = 1\n\
 " > ~/.vimrc
 
+
+# Set up Git user identity for commits and pushes
+RUN git config --global user.name "Ivan Milaev" \
+    && git config --global user.email "milaevivan@gmail.com"
+
 # Copy SSH keys into the container (keys should be available in the context)
 # The 'id_rsa' and 'id_rsa.pub' files should be in the same directory as the Dockerfile
 COPY git_milaevivan /root/.ssh/id_rsa

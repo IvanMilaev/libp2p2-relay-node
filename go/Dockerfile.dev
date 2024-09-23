@@ -1,0 +1,21 @@
+# Dockerfile.dev
+
+# Use the official Go image as the base image
+FROM golang:1.23.1
+
+# Set the working directory inside the container
+WORKDIR /app
+
+# Copy go.mod and go.sum files and download dependencies
+COPY go.mod go.sum ./
+RUN go mod download
+
+# Copy the rest of the application code
+COPY . .
+
+# Expose the port your app runs on
+EXPOSE 8080
+
+# Default command to run a bash shell
+CMD ["bash"]
+
