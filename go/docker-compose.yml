@@ -8,6 +8,7 @@ services:
       dockerfile: Dockerfile.dev
     volumes:
       - .:/app  # Mount your project directory inside the container
+      - ./.vimrc:/root/.vimrc
     ports:
       - "8080:8080"  # Map the container port to the host
     environment:
