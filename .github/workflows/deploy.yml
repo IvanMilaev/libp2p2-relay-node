@@ -44,10 +44,9 @@ jobs:
 
       - name: Fill in the new image ID in the Amazon ECS task definition
         id: task-def
-        working-directory: ./go
         uses: aws-actions/amazon-ecs-render-task-definition@v1
         with:
-          task-definition: task-def.json
+          task-definition: ./go/task-def.json
           container-name: relay-service
           image: ${{ steps.login-ecr.outputs.registry }}/relay-service:${{ github.sha }}
 
