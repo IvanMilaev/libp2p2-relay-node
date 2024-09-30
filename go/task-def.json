@@ -1,0 +1,23 @@
+{
+  "family": "relay-service",
+  "networkMode": "awsvpc",
+  "executionRoleArn": "arn:aws:iam::767397672886:role/ecsTaskExecutionRole",
+  "containerDefinitions": [
+    {
+      "name": "relay-service",
+      "image": "%ECR_IMAGE%",
+      "essential": true,
+      "portMappings": [
+        {
+          "containerPort": 4001,
+          "hostPort": 4001,
+          "protocol": "tcp"
+        }
+      ]
+    }
+  ],
+  "requiresCompatibilities": ["FARGATE"],
+  "cpu": "256",
+  "memory": "512"
+}
+
