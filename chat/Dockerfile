@@ -25,6 +25,9 @@ COPY .vimrc /root/.vimrc
 # Copy the project files into the container
 COPY . /app
 
+# Expose ports 8000 and 8001
+EXPOSE 8000 8001
+
 # Start an interactive bash shell
 CMD ["bash"]
 
